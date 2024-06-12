@@ -29,7 +29,7 @@ const projects = [
     stack: [{ name: "React.js" }, { name: "Next.js" }, { name: "Javascript" }],
     image: "/assets/work/1.png",
     live: "",
-    github: "",
+    github: "https://github.com/farishamy16/blogWebApp",
   },
   {
     num: "02",
@@ -44,7 +44,7 @@ const projects = [
     ],
     image: "/assets/work/2.png",
     live: "",
-    github: "",
+    github: "https://github.com/farishamy16/faris-hamy-portfolio",
   },
   {
     num: "03",
