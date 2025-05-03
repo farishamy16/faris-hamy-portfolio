@@ -22,19 +22,58 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "Full Stack",
-    title: "project 1",
+    category: "Event Platform",
+    title: "RepzYourStyle",
     description:
-      "It features CRUD functionality, secure authentication, and MongoDB integration for efficient data management.",
-    stack: [{ name: "React.js" }, { name: "Next.js" }, { name: "Javascript" }],
-    image: "/assets/work/1.png",
-    live: "",
-    github: "https://github.com/farishamy16/blogWebApp",
+      "Malaysia's biggest street dance festival platform featuring dance battles, workshops, and cultural events. Featuring registration, payment, ticketing, and tracking management systems.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Nest.js" },
+      { name: "AWS" },
+      { name: "Firebase" },
+      { name: "MongoDB" },
+    ],
+    image: "/assets/work/RYS.webp",
+    live: "https://repzyourstyle2025.web.app/",
+    github: "",
   },
   {
     num: "02",
+    category: "Event Platform Marketplace",
+    title: "KitaPlan",
+    description:
+      "Born from the desire to make event planning effortless, KitaPlan is a comprehensive platform where vendors across various categories come together to showcase their services.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Supabase" },
+      { name: "PostgreSQL" },
+      { name: "DaisyUI" },
+      { name: "Railway" },
+    ],
+    image: "/assets/work/KitaPlan.webp",
+    live: "https://kitaplan.com",
+    github: "",
+  },
+  {
+    num: "03",
+    category: "AI Tourism Guide",
+    title: "KakiJalan",
+    description:
+      "An AI-powered Telegram chatbot serving as a friendly virtual tour guide for Penang. Leveraging advanced RAG models to provide personalized, context-aware travel recommendations and cultural insights.",
+    stack: [
+      { name: "Telegram API" },
+      { name: "PostgreSQL" },
+      { name: "Deepseek" },
+      { name: "Google Cloud" },
+    ],
+    image: "/assets/work/AI Chatbot.webp",
+    live: "https://t.me/KakiJalanBot",
+    github: "",
+  },
+  {
+    num: "04",
     category: "frontend",
-    title: "project 2",
+    title: "Portfolio Site",
     description:
       "With sleek design powered by Tailwind CSS and dynamic animations courtesy of Framer Motion, my site is a visual feast.",
     stack: [
@@ -47,9 +86,9 @@ const projects = [
     github: "https://github.com/farishamy16/faris-hamy-portfolio",
   },
   {
-    num: "03",
+    num: "05",
     category: "E-commerce",
-    title: "project 3",
+    title: "LuvinSecret",
     description:
       "Powered by WordPress and seamlessly integrated APIs, my full-fledged online shop makes shopping a breeze.",
     stack: [
@@ -62,16 +101,28 @@ const projects = [
     live: "https://luvinsecret.com/",
     github: "",
   },
+  {
+    num: "06",
+    category: "Full Stack",
+    title: "Demo Web App",
+    description:
+      "It features CRUD functionality, secure authentication, and MongoDB integration for efficient data management.",
+    stack: [{ name: "React.js" }, { name: "Next.js" }, { name: "Javascript" }],
+    image: "/assets/work/1.png",
+    live: "",
+    github: "https://github.com/farishamy16/blogWebApp",
+  },
+  
 ];
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
 
   const handleSlideChange = (swiper) => {
-    // get current slide index
-    const currentIndex = swiper.activeIndex;
-    // update project state based on current slide index
-    setProject(projects[currentIndex]);
+    // get real index for looped slides
+    const realIndex = swiper.realIndex;
+    // update project state based on real index
+    setProject(projects[realIndex]);
   };
 
   return (
@@ -91,17 +142,21 @@ const Work = () => {
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
-              {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+              {/* project title */}
+              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500">
+                {project.title}
               </h2>
+              {/* project category */}
+              <h3 className="text-lg font-medium text-accent/80 uppercase tracking-wider -mt-4">
+                {project.category}
+              </h3>
               {/* project description */}
               <p className="text-white/60">{project.description}</p>
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-2">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <li key={index} className="text-accent">
                       {item.name}
                       {/* remove the last comma */}
                       {index !== project.stack.length - 1 && ","}
@@ -114,31 +169,35 @@ const Work = () => {
               {/* buttons */}
               <div className="flex items-center gap-4">
                 {/* live project button */}
-                <Link href={project.live} target="_blank">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.live && (
+                  <Link href={project.live} target="_blank">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Live project</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
                 {/* github project button */}
-                <Link href={project.github} target="_blank">
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
-                      </TooltipTrigger>
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
+                {project.github && (
+                  <Link href={project.github} target="_blank">
+                    <TooltipProvider delayDuration={100}>
+                      <Tooltip>
+                        <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                          <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Github repository</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -146,6 +205,7 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
+              loop={true}
               className="xl:h-[520px] mb-12"
               onSlideChange={handleSlideChange}
             >
@@ -160,7 +220,7 @@ const Work = () => {
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover"
+                          className="object-contain"
                           alt=""
                         />
                       </div>
