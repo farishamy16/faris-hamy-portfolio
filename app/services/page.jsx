@@ -6,30 +6,37 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Full-Stack Web Development",
     description:
-      "Create and maintain websites that are functional, user-friendly, and up-to-date. Whether it’s an e-commerce platform, a blog, or a portfolio site, I’ll ensure it runs smoothly and looks great.",
+      "Build modern, responsive web applications using Next.js, React, and TypeScript. From registration portals to complex web systems, I deliver scalable solutions with clean code and optimal performance.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "AI Development",
     description:
-      "Craft intuitive interfaces and engaging user experiences. From wireframes to polished designs, I’ll make sure users love interacting with your digital products.",
+      "Develop intelligent AI solutions including custom chatbots, AI agents, and automation systems. Leverage cutting-edge AI technologies to create smart, context-aware applications that enhance business processes.",
     href: "",
   },
   {
     num: "03",
-    title: "Automation",
+    title: "System Development",
     description:
-      "Streamline repetitive tasks using Python scripts. Think data processing, file management, or even scheduled backups—all automated for efficiency.",
+      "Design and develop custom software systems using Python, NestJS, and modern databases (PostgreSQL, MongoDB). Specializing in automation, data processing, and business process optimization.",
     href: "",
   },
   {
     num: "04",
-    title: "Graphic Design",
+    title: "API Development & Integration",
     description:
-      "Design eye-catching visuals using Canva. From social media posts to marketing materials, I’ll create compelling graphics that resonate with your audience.",
+      "Create robust RESTful APIs and seamlessly integrate third-party services. Using technologies like NestJS, Express, and Supabase to build secure and scalable backend solutions.",
+    href: "",
+  },
+  {
+    num: "05",
+    title: "Technical Consultation",
+    description:
+      "Provide expert guidance on technology stack selection, system architecture, and development best practices. Help businesses make informed decisions about their technical infrastructure.",
     href: "",
   },
 ];

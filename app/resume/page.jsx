@@ -6,27 +6,29 @@ import {
   FaJs,
   FaReact,
   FaFigma,
-  FaNodeJs,
   FaPython,
-  FaBootstrap,
+  FaNpm,
+  FaAws,
 } from "react-icons/fa";
 
 import {
   SiTailwindcss,
   SiNextdotjs,
   SiTypescript,
-  SiShadcnui,
-  SiExpress,
   SiPostgresql,
   SiPostman,
   SiMongodb,
+  SiDaisyui,
+  SiNestjs,
+  SiSupabase,
+  SiRailway,
 } from "react-icons/si";
 
 // about data
 const about = {
   title: "About me",
   description:
-    "I’m like a curious sponge, soaking up knowledge and always hungry for growth. My compass points toward success, and my discipline keeps me on course. With a rocket-fueled self-motivation, I thrive in team orbits, sparking connections with fellow explorers.",
+    "I'm like a curious sponge, soaking up knowledge and always hungry for growth. My compass points toward success, and my discipline keeps me on course. With a rocket-fueled self-motivation, I thrive in team orbits, sparking connections with fellow explorers.",
   info: [
     {
       fieldName: "Name",
@@ -38,7 +40,7 @@ const about = {
     },
     {
       fieldName: "Experience",
-      fieldValue: "Entry-level",
+      fieldValue: "Mid-Level",
     },
     {
       fieldName: "Nationality",
@@ -64,12 +66,22 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My experience",
   description:
-    "Aspiring software developer with a strong foundation in programming and a passion for continuous learning.",
+    "Passionate about bridging business and technology, creating impactful solutions that drive innovation.",
   items: [
     {
+      company: "Anhsin Technology Sdn Bhd",
+      position: "AI Software Engineer",
+      duration: "December 2024 - Present",
+    },
+    {
+      company: "Kiddocare Malaysia",
+      position: "Product Manager",
+      duration: "October 2024",
+    },
+    {
       company: "Independent Fund Manager",
-      position: "Python Developer",
-      duration: "Mar 2024 - Present",
+      position: "Automation Python Developer",
+      duration: "Mar 2024 - July 2024",
     },
     {
       company: "LuvinSecret Enterprise",
@@ -102,6 +114,11 @@ const education = {
     "Since day one of my life, I've been committed to continuously improving my knowledge and skills.",
   items: [
     {
+      institution: "Talent Labs, K-Youth Development Programme",
+      degree: "Certified Associate in Business Analytics",
+      duration: "July 2024 - October 2024",
+    },
+    {
       institution: "London App Brewery, Udemy",
       degree: "Full Stack Web Development Bootcamp",
       duration: "May 2024",
@@ -131,57 +148,37 @@ const education = {
 
 // skills data
 const skills = {
-  title: "My skills",
+  title: "Tech Stack",
   description:
     "A versatile blend of technical wizardry and creative problem-solving.",
   skillList: [
     {
-      icon: <FaHtml5 />,
-      name: "html 5",
-    },
-    {
-      icon: <FaCss3 />,
-      name: "css 3",
-    },
-    {
-      icon: <FaJs />,
-      name: "javascript",
-    },
-    {
-      icon: <FaReact />,
-      name: "react.js",
+      icon: <FaPython />,
+      name: "python",
     },
     {
       icon: <SiNextdotjs />,
       name: "next.js",
     },
     {
-      icon: <SiTailwindcss />,
-      name: "tailwind.css",
+      icon: <SiNestjs />,
+      name: "NestJS",
     },
     {
-      icon: <FaNodeJs />,
-      name: "node.js",
+      icon: <FaReact />,
+      name: "react.js",
     },
     {
-      icon: <FaPython />,
-      name: "python",
+      icon: <FaAws />,
+      name: "AWS",
     },
     {
       icon: <SiTypescript />,
       name: "typescript",
     },
     {
-      icon: <FaBootstrap />,
-      name: "bootstrap",
-    },
-    {
-      icon: <SiShadcnui />,
-      name: "shadcn",
-    },
-    {
-      icon: <SiExpress />,
-      name: "express.js",
+      icon: <FaJs />,
+      name: "javascript",
     },
     {
       icon: <SiPostgresql />,
@@ -192,8 +189,36 @@ const skills = {
       name: "mongoDB",
     },
     {
+      icon: <SiSupabase />,
+      name: "Supabase",
+    },
+    {
+      icon: <SiDaisyui />,
+      name: "daisyUI",
+    },
+    {
+      icon: <FaHtml5 />,
+      name: "html 5",
+    },
+    {
+      icon: <FaCss3 />,
+      name: "css 3",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "tailwind.css",
+    },
+    {
       icon: <SiPostman />,
       name: "postman",
+    },
+    {
+      icon: <SiRailway />,
+      name: "Railway",
+    },
+    {
+      icon: <FaNpm />,
+      name: "npm",
     },
   ],
 };
@@ -218,7 +243,7 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+      className="min-h-[80vh] flex items-center justify-center py-12 pb-24 xl:py-0 xl:pb-32"
     >
       <div className="container mx-auto">
         <Tabs
@@ -227,8 +252,8 @@ const Resume = () => {
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="skills">Tech Stack</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
 
@@ -340,7 +365,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                   {about.description}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
+                <ul className="grid grid-cols-1 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => {
                     return (
                       <li
