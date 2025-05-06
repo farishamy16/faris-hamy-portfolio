@@ -11,8 +11,8 @@ import Stats from "@/components/Stats";
 const Home = () => {
   const handleDownload = () => {
     // Replace with your file URL
-    const fileName = "Faris Hamy Resume.pdf";
-    const fileUrl = "http://localhost:3000/assets/Faris Hamy Resume.pdf";
+    const fileName = "Faris Hamy CV.pdf";
+    const fileUrl = "/assets/Faris Hamy CV.pdf";
     const aTag = document.createElement("a");
     aTag.href = fileUrl;
     aTag.setAttribute("download", fileName);

@@ -69,9 +69,14 @@ const experience = {
     "Passionate about bridging business and technology, creating impactful solutions that drive innovation.",
   items: [
     {
+      company: "KitaPlan",
+      position: "Founder & AI Software Engineer",
+      duration: "May 2025 - Present",
+    },
+    {
       company: "Anhsin Technology Sdn Bhd",
-      position: "AI Software Engineer",
-      duration: "December 2024 - Present",
+      position: "Full Stack Developer",
+      duration: "December 2024 - May 2025",
     },
     {
       company: "Kiddocare Malaysia",
