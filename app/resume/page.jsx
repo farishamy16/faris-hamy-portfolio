@@ -22,6 +22,7 @@ import {
   SiNestjs,
   SiSupabase,
   SiRailway,
+  SiDocker,
 } from "react-icons/si";
 
 // about data
@@ -176,6 +177,10 @@ const skills = {
     {
       icon: <FaAws />,
       name: "AWS",
+    },
+    {
+      icon: <SiDocker />,
+      name: "Docker",
     },
     {
       icon: <SiTypescript />,
