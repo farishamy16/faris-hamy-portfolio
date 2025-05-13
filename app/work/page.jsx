@@ -56,6 +56,25 @@ const projects = [
   },
   {
     num: "03",
+    category: "Artificial Intelligence",
+    title: "AI Chatbot V2.0",
+    description:
+      "Using self-made API, a fully customisable interface and a standalone application AI chatbot with a wide range of features, including a knowledge base retrieval, and context-aware conversation.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Supabase" },
+      { name: "PostgreSQL" },
+      { name: "Deepseek" },
+      { name: "DaisyUI" },
+      { name: "Railway" },
+      { name: "n8n" },
+    ],
+    image: "/assets/work/AI Chatbot V2.0.webp",
+    live: "https://ai-chatbot-gui-production.up.railway.app/",
+    github: "",
+  },
+  {
+    num: "04",
     category: "AI Tourism Guide",
     title: "KakiJalan",
     description:
@@ -71,7 +90,7 @@ const projects = [
     github: "",
   },
   {
-    num: "04",
+    num: "05",
     category: "frontend",
     title: "Portfolio Site",
     description:
@@ -86,7 +105,7 @@ const projects = [
     github: "https://github.com/farishamy16/faris-hamy-portfolio",
   },
   {
-    num: "05",
+    num: "06",
     category: "E-commerce",
     title: "LuvinSecret",
     description:
@@ -102,7 +121,7 @@ const projects = [
     github: "",
   },
   {
-    num: "06",
+    num: "07",
     category: "Full Stack",
     title: "Demo Web App",
     description:
